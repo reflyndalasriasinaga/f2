@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Portfolio Profile - Warm Amber Aesthetic</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #171513;
+            --card-bg: rgba(30, 27, 24, 0.75);
+            --card-border: rgba(212, 163, 89, 0.15);
+            --text-main: #f5f2eb;
+            --text-muted: #a39b90;
+            --accent-gradient: linear-gradient(135deg, #f4a261 0%, #e76f51 50%, #d4a359 100%);
+            --accent-color: #f4a261;
+            --accent-hover: #e76f51;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(244, 162, 97, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(212, 163, 89, 0.06) 0%, transparent 40%);
+        }
+
+        /* Navbar Header */
+        header {
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--card-border);
+            background: rgba(23, 21, 19, 0.85);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-avatar-sm {
+            width: 36px;
+            height: 36px;
+            background: var(--accent-gradient);
+            color: #171513;
+            font-weight: 700;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+
+        .nav-title {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .nav-subtitle {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section Container Utama */
+        main {
+            max-width: 1100px;
+            margin: 120px auto 60px auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        /* Bagian Kiri: Teks & Intro */
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .badge-welcome {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(244, 162, 97, 0.1);
+            color: var(--accent-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            width: fit-content;
+            border: 1px solid rgba(244, 162, 97, 0.2);
+        }
+
+        .hero-title {
+            font-family: 'Newsreader', serif;
+            font-size: 46px;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .gradient-text {
+            background: var(--accent-gradient);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 420px;
+            font-weight: 300;
+        }
+
+        /* Statistik Singkat */
+        .stats-grid {
+            display: flex;
+            gap: 32px;
+            margin-top: 10px;
+        }
+
+        .stat-item h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .stat-item p {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* Tombol Aksi */
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: #171513;
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-main);
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid var(--card-border);
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        /* Bagian Kanan: Floating Card */
+        .hero-right {
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-card {
+            width: 100%;
+            max-width: 400px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(16px);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        /* Area Konten di dalam Kartu yang bisa digulir (Scrollable) */
+        .card-scroll-area {
+            max-height: 420px;
+            overflow-y: auto;
+            padding-right: 4px;
+            text-align: left;
+        }
+
+        .card-scroll-area::-webkit-scrollbar {
+            width: 4px;
+        }
+        .card-scroll-area::-webkit-scrollbar-thumb {
+            background: rgba(212, 163, 89, 0.3);
+            border-radius: 4px;
+        }
+
+        .card-avatar {
+            width: 70px;
+            height: 70px;
+            background: var(--accent-gradient);
+            color: #171513;
+            font-family: 'Newsreader', serif;
+            font-size: 26px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 12px auto;
+            box-shadow: 0 8px 20px rgba(244, 162, 97, 0.2);
+        }
+
+        .card-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 2px;
+            text-align: center;
+        }
+
+        .card-role {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Seksi Judul di dalam Kartu */
+        .card-section-title {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            margin-top: 16px;
+            font-weight: 600;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 4px;
+        }
+
+        /* Item List (Proyek, Pengalaman, Pendidikan) */
+        .card-item-box {
+            background: rgba(23, 21, 19, 0.6);
+            border: 1px solid var(--card-border);
+            padding: 10px 12px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+        }
+
+        .item-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .item-subtitle {
+            font-size: 11px;
+            color: var(--accent-color);
+            margin-bottom: 2px;
+        }
+
+        .item-desc {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        /* Skills Tag di Card */
+        .card-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .card-tag {
+            background: rgba(244, 162, 97, 0.1);
+            color: var(--accent-color);
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 500;
+            border: 1px solid rgba(244, 162, 97, 0.15);
+        }
+
+        /* Responsif untuk Mobile */
+        @media (max-width: 768px) {
+            header {
+                padding: 16px 20px;
+            }
+            .nav-menu {
+                display: none;
+            }
+            main {
+                grid-template-columns: 1fr;
+                margin-top: 100px;
+                gap: 30px;
+                text-align: center;
+            }
+            .hero-left {
+                align-items: center;
+            }
+            .hero-desc {
+                max-width: 100%;
+            }
+            .stats-grid {
+                justify-content: center;
+            }
+            .action-buttons {
+                width: 100%;
+                flex-direction: column;
+            }
+            .card-scroll-area {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <header>
+        <div class="nav-brand">
+            <div class="nav-avatar-sm" id="navInitials">RK</div>
+            <div>
+                <div class="nav-title" id="navName">Reflynda </div>
+                <div class="nav-subtitle">Portfolio</div>
+            </div>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#projects">Portfolio</a></li>
+        </ul>
+    </header>
+
+    <!-- Konten Utama -->
+    <main>
+        <!-- Sisi Kiri: Teks & Informasi Utama -->
+        <section class="hero-left">
+            <div class="badge-welcome">✨ Selamat Datang</div>
+            <h1 class="hero-title">Halo, Saya <br><span class="gradient-text" id="heroName">Reflynda </span></h1>
+            <p class="hero-desc" id="heroBio">Membuat cerita yang menginspirasi dan menghibur melalui tulisan dan game.</p>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 id="statProjects">2+</h3>
+                    <p>Projects</p>
+                </div>
+                <div class="stat-item">
+                    <h3 id="statSkills">4</h3>
+                    <p>Skills</p>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="#projects" class="btn-primary">Lihat Project ↗</a>
+                <a href="#" class="btn-secondary" id="hallButton">Hall of Creations</a>
+            </div>
+        </section>
+
+        <!-- Sisi Kanan: Floating Card dengan DOM Data Lengkap -->
+        <section class="hero-right">
+            <div class="profile-card">
+                <div class="card-avatar" id="cardAvatar">NK</div>
+                <div class="card-name" id="cardName">Reflynda</div>
+                <div class="card-role" id="cardRole">Creative Writer & Proggamer</div>
+                
+                <!-- Area Scroll untuk Konten Tambahan -->
+                <div class="card-scroll-area">
+                    
+                    <!-- Proyek Pilihan -->
+                    <div class="card-section-title">Karya Pilihan</div>
+                    <div id="miniProjectsContainer"></div>
+
+                    <!-- Pengalaman Pekerjaan / Organisasi -->
+                    <div class="card-section-title">Pengalaman</div>
+                    <div id="experienceContainer"></div>
+
+                    <!-- Riwayat Pendidikan -->
+                    <div class="card-section-title">Pendidikan</div>
+                    <div id="educationContainer"></div>
+
+                    <!-- Keahlian -->
+                    <div class="card-section-title">Keahlian</div>
+                    <div class="card-skills" id="cardSkillsContainer"></div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Script DOM Lengkap dengan Data Pengalaman & Pendidikan -->
+    <script>
+        const profileData = {
+            name: "Reflynda",
+            role: "Creative Writer & Proggamer",
+            bio: "Membuat cerita yang menginspirasi dan menghibur melalui tulisan dan website.",
+            projects: [
+                { title: "The Lost Melody", desc: "Seorang komposer muda yang ingatannya terhapus setiap hari perlahan jatuh cinta pada gadis yang diam-diam menjadi penjaga seluruh sisa lagunya.." }
+            ],
+            experiences: [
+                { role: " Writer", place: "Wattpad AU Community", period: "2020 - Sekarang", desc: "Mengikuti pembelajaran dan pengembangan keterampilan menulis cerita interaktif." },
+            ],
+            educations: [
+                { 
+                    degree:"SD NEGERI 005", institution: "SD NEGERI 005", period: "2016 - 2022"
+                },
+                { 
+                    degree: "SMP NEGERI 27", institution: "SMP NEGERI 27", period: "2022 - 2025"
+                },
+                {
+                    degree: "SMK TI AIRLANGGA", institution: "SMK TI AIRLANGGA", period: "2025 - Sekarang"
+                }
+            ],
+            skills: ["Creative Writing", "Plot Development", "Editing", "HTML & CSS"],
+            hallLink: "#"
+        };
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // Header & Hero Section Text
+            document.getElementById("navName").textContent = profileData.name;
+            document.getElementById("heroName").textContent = profileData.name;
+            document.getElementById("heroBio").textContent = profileData.bio;
+            document.getElementById("cardName").textContent = profileData.name;
+            document.getElementById("cardRole").textContent = profileData.role;
+            
+            // Inisial Avatar Otomatis
+            const initials = profileData.name.split(" ").map(n => n[0]).join("").toUpperCase().substring(0, 2);
+            document.getElementById("navInitials").textContent = initials;
+            document.getElementById("cardAvatar").textContent = initials;
+
+            // Statistik
+            document.getElementById("statProjects").textContent = profileData.projects.length + "+";
+            document.getElementById("statSkills").textContent = profileData.skills.length;
+
+            // DOM: Render Projects
+            const projectsContainer = document.getElementById("miniProjectsContainer");
+            profileData.projects.forEach(proj => {
+                const div = document.createElement("div");
+                div.className = "card-item-box";
+                div.innerHTML = `
+                    <div class="item-title">${proj.title}</div>
+                    <div class="item-desc">${proj.desc}</div>
+                `;
+                projectsContainer.appendChild(div);
+            });
+
+            // DOM: Render Experiences
+            const expContainer = document.getElementById("experienceContainer");
+            profileData.experiences.forEach(exp => {
+                const div = document.createElement("div");
+                div.className = "card-item-box";
+                div.innerHTML = `
+                    <div class="item-title">${exp.role}</div>
+                    <div class="item-subtitle">${exp.place} • <span style="color:var(--text-muted);">${exp.period}</span></div>
+                    <div class="item-desc">${exp.desc}</div>
+                `;
+                expContainer.appendChild(div);
+            });
+
+            // DOM: Render Educations
+            const eduContainer = document.getElementById("educationContainer");
+            profileData.educations.forEach(edu => {
+                const div = document.createElement("div");
+                div.className = "card-item-box";
+                div.innerHTML = `
+                    <div class="item-title">${edu.degree}</div>
+                    <div class="item-subtitle">${edu.institution} • <span style="color:var(--text-muted);">${edu.period}</span></div>
+                    <div class="item-desc">${edu.desc}</div>
+                `;
+                eduContainer.appendChild(div);
+            });
+
+            // DOM: Render Skills Badges
+            const skillsContainer = document.getElementById("cardSkillsContainer");
+            profileData.skills.forEach(skill => {
+                const span = document.createElement("span");
+                span.className = "card-tag";
+                span.textContent = skill;
+                skillsContainer.appendChild(span);
+            });
+
+            // Link Tombol
+            document.getElementById("hallButton").href = profileData.hallLink;
+        });
+    </script>
+</body>
+</html>
