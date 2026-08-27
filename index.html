@@ -9,14 +9,15 @@
     
     <style>
         :root {
-            --bg-color: #0f0e0d;
-            --card-bg: rgba(26, 23, 20, 0.8);
-            --card-border: rgba(244, 162, 97, 0.25);
-            --text-main: #f5f2eb;
-            --text-muted: #a39b90;
-            --accent-gradient: linear-gradient(135deg, #f4a261 0%, #e76f51 50%, #f4a261 100%);
-            --accent-color: #f4a261;
-            --accent-hover: #e76f51;
+            --bg-color: #fff0f3;
+            --card-bg: rgba(255, 255, 255, 0.75);
+            --card-border: rgba(255, 182, 193, 0.4);
+            --text-main: #4a3b4c;
+            --text-muted: #8c758f;
+            --accent-gradient: linear-gradient(135deg, #ff758c 0%, #ff7eb3 50%, #fda4af 100%);
+            --accent-color: #e11d48;
+            --accent-hover: #be123c;
+            --tag-bg: rgba(255, 182, 193, 0.25);
         }
 
         * {
@@ -34,14 +35,14 @@
             position: relative;
         }
 
-        /* --- ORNAMEN BACKGROUND RAME (Glowing Orbs & Grid) --- */
+        /* --- ORNAMEN BACKGROUND PASTEL (Glowing Orbs & Grid) --- */
         .bg-glow-1 {
             position: absolute;
             top: -10%;
             left: -10%;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(244, 162, 97, 0.12) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 182, 193, 0.5) 0%, transparent 70%);
             z-index: -1;
             border-radius: 50%;
             filter: blur(40px);
@@ -53,7 +54,7 @@
             right: -10%;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(231, 111, 81, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(253, 164, 175, 0.4) 0%, transparent 70%);
             z-index: -1;
             border-radius: 50%;
             filter: blur(50px);
@@ -62,8 +63,8 @@
         .bg-grid {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-image: linear-gradient(to right, rgba(255,255,255,0.015) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255,255,255,0.015) 1px, transparent 1px);
+            background-image: linear-gradient(to right, rgba(225, 29, 72, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(225, 29, 72, 0.03) 1px, transparent 1px);
             background-size: 50px 50px;
             z-index: -1;
         }
@@ -76,7 +77,7 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid var(--card-border);
-            background: rgba(15, 14, 13, 0.85);
+            background: rgba(255, 240, 243, 0.85);
             backdrop-filter: blur(12px);
             position: fixed;
             top: 0;
@@ -93,14 +94,14 @@
             width: 38px;
             height: 38px;
             background: var(--accent-gradient);
-            color: #0f0e0d;
+            color: #ffffff;
             font-weight: 700;
             font-size: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(244, 162, 97, 0.3);
+            box-shadow: 0 4px 12px rgba(255, 117, 140, 0.3);
         }
 
         .nav-title {
@@ -163,33 +164,33 @@
             border-radius: 20px;
             font-size: 12px;
             font-weight: 600;
-            border: 1px solid rgba(244, 162, 97, 0.2);
+            border: 1px solid rgba(255, 117, 140, 0.2);
         }
 
         .badge-welcome {
-            background: rgba(244, 162, 97, 0.1);
+            background: rgba(255, 117, 140, 0.12);
             color: var(--accent-color);
         }
 
         .badge-status {
-            background: rgba(45, 212, 191, 0.1);
-            color: #2dd4bf;
-            border-color: rgba(45, 212, 191, 0.2);
+            background: rgba(16, 185, 129, 0.1);
+            color: #059669;
+            border-color: rgba(16, 185, 129, 0.2);
         }
 
         .pulse-dot {
             width: 7px;
             height: 7px;
-            background-color: #2dd4bf;
+            background-color: #059669;
             border-radius: 50%;
-            box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.6);
+            box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.6);
             animation: pulse 1.5s infinite;
         }
 
         @keyframes pulse {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(45, 212, 191, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(45, 212, 191, 0); }
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(5, 150, 105, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(5, 150, 105, 0); }
         }
 
         .hero-title {
@@ -215,7 +216,7 @@
             font-weight: 300;
         }
 
-        /* Statistik Box Rame (4 Kolom) */
+        /* Statistik Box Rame (3 Kolom) */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -224,7 +225,7 @@
         }
 
         .stat-card {
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(255, 255, 255, 0.5);
             border: 1px solid var(--card-border);
             padding: 14px;
             border-radius: 14px;
@@ -235,7 +236,7 @@
         .stat-card:hover {
             border-color: var(--accent-color);
             transform: translateY(-3px);
-            background: rgba(244, 162, 97, 0.04);
+            background: rgba(255, 255, 255, 0.9);
         }
 
         .stat-card h3 {
@@ -250,7 +251,7 @@
             margin-top: 2px;
         }
 
-        /* Floating Mini Badges / Keahlian Berjalan (Rame Effect) */
+        /* Floating Mini Badges / Keahlian Berderet */
         .floating-tags {
             display: flex;
             gap: 8px;
@@ -259,7 +260,7 @@
         }
 
         .ftag {
-            background: rgba(255, 255, 255, 0.04);
+            background: var(--tag-bg);
             border: 1px solid var(--card-border);
             color: var(--text-main);
             font-size: 11px;
@@ -277,14 +278,14 @@
 
         .btn-primary {
             background-color: var(--accent-color);
-            color: #0f0e0d;
+            color: #ffffff;
             padding: 12px 24px;
             border-radius: 10px;
             text-decoration: none;
             font-size: 13px;
             font-weight: 600;
             transition: all 0.2s;
-            box-shadow: 0 4px 15px rgba(244, 162, 97, 0.2);
+            box-shadow: 0 4px 15px rgba(225, 29, 72, 0.2);
         }
 
         .btn-primary:hover {
@@ -293,7 +294,7 @@
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.6);
             color: var(--text-main);
             padding: 12px 24px;
             border-radius: 10px;
@@ -305,7 +306,7 @@
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.9);
         }
 
         /* Bagian Kanan: Kartu Profil Rame dengan Tab Menu */
@@ -322,7 +323,7 @@
             backdrop-filter: blur(20px);
             border-radius: 24px;
             padding: 24px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 20px 40px rgba(255, 117, 140, 0.15);
         }
 
         .card-header-profile {
@@ -338,7 +339,7 @@
             width: 64px;
             height: 64px;
             background: var(--accent-gradient);
-            color: #0f0e0d;
+            color: #ffffff;
             font-family: 'Newsreader', serif;
             font-size: 26px;
             font-weight: 700;
@@ -346,7 +347,7 @@
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            box-shadow: 0 8px 20px rgba(244, 162, 97, 0.3);
+            box-shadow: 0 8px 20px rgba(255, 117, 140, 0.3);
         }
 
         .card-name {
@@ -364,7 +365,7 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 4px;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(255, 182, 193, 0.25);
             padding: 4px;
             border-radius: 12px;
             margin-bottom: 16px;
@@ -385,8 +386,8 @@
 
         .tab-btn.active {
             background: var(--accent-color);
-            color: #0f0e0d;
-            box-shadow: 0 4px 12px rgba(244, 162, 97, 0.3);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25);
         }
 
         /* Konten Panel Tab */
@@ -401,7 +402,7 @@
             width: 4px;
         }
         .tab-content-container::-webkit-scrollbar-thumb {
-            background: rgba(244, 162, 97, 0.3);
+            background: rgba(255, 117, 140, 0.4);
             border-radius: 4px;
         }
 
@@ -416,7 +417,7 @@
         }
 
         .card-item-box {
-            background: rgba(15, 14, 13, 0.75);
+            background: rgba(255, 255, 255, 0.7);
             border: 1px solid var(--card-border);
             padding: 12px;
             border-radius: 12px;
@@ -426,6 +427,7 @@
         .card-item-box:hover {
             border-color: var(--accent-color);
             transform: translateX(2px);
+            background: rgba(255, 255, 255, 0.95);
         }
 
         .item-title {
@@ -455,13 +457,13 @@
         }
 
         .card-tag {
-            background: rgba(244, 162, 97, 0.1);
+            background: var(--tag-bg);
             color: var(--accent-color);
             font-size: 11px;
             padding: 6px 12px;
             border-radius: 8px;
             font-weight: 500;
-            border: 1px solid rgba(244, 162, 97, 0.15);
+            border: 1px solid var(--card-border);
         }
 
         /* Responsif Mobile */
@@ -497,7 +499,7 @@
 </head>
 <body>
 
-    <!-- Elemen Background Rame (Glow & Grid) -->
+    <!-- Elemen Background Pastel -->
     <div class="bg-glow-1"></div>
     <div class="bg-glow-2"></div>
     <div class="bg-grid"></div>
@@ -534,20 +536,20 @@
             <!-- Statistik Box Rame -->
             <div class="stats-grid">
                 <div class="stat-card">
-                    <h3 id="statProjects">2+</h3>
+                    <h3 id="statProjects">1+</h3>
                     <p>Projects</p>
                 </div>
                 <div class="stat-card">
-                    <h3 id="statExp">2</h3>
+                    <h3 id="statExp">1</h3>
                     <p>Pengalaman</p>
                 </div>
                 <div class="stat-card">
-                    <h3 id="statSkills">4</h3>
+                    <h3 id="statSkills">3</h3>
                     <p>Skills</p>
                 </div>
             </div>
 
-            <!-- Tag Keahlian Berderet (Biar Rame) -->
+            <!-- Tag Keahlian Berderet -->
             <div class="floating-tags">
                 <span class="ftag"></span>
                 <span class="ftag">✍️ Storytelling</span>
@@ -582,7 +584,7 @@
                     <button class="tab-btn" onclick="switchTab('skills', event)">Skills</button>
                 </div>
 
-                <!-- Konten Panel Tab (Dikelola dengan DOM) -->
+                <!-- Konten Panel Tab -->
                 <div class="tab-content-container">
                     
                     <!-- Panel Projects -->
@@ -618,7 +620,7 @@
             role: "Creative Writer & Programmer",
             bio: "Membuat cerita yang menginspirasi dan menghibur melalui tulisan kreatif serta pengembangan web interaktif.",
             projects: [
-                { title: "the lost melody (Ongoing)", desc: "Seorang komposer muda yang ingatannya terhapus setiap hari perlahan jatuh cinta pada gadis yang diam-diam menjadi penjaga seluruh sisa lagunya.." },
+                { title: "The Lost Melody", desc: "Seorang komposer muda yang ingatannya terhapus setiap hari perlahan jatuh cinta pada gadis yang diam-diam menjadi penjaga seluruh sisa lagunya." }
             ],
             experiences: [
                 { role: "Narrative Writer", place: "Wattpad AU Community", period: "2020 - Sekarang", desc: "Mengikuti pembelajaran dan pengembangan keterampilan menulis cerita interaktif." }
@@ -628,7 +630,7 @@
                 { degree: "SMP NEGERI 27", institution: "SMP NEGERI 27", period: "2022 - 2025", desc: "Pendidikan Menengah Pertama." },
                 { degree: "SMK TI AIRLANGGA", institution: "SMK TI AIRLANGGA", period: "2025 - Sekarang", desc: "Pendidikan Kejuruan Teknologi Informasi." }
             ],
-            skills: ["Creative Writing", "Plot Development", "Editing", "HTML/CSS"],
+            skills: ["Creative Writing", "Plot Development", "Editing"],
             hallLink: "#"
         };
 
@@ -646,8 +648,6 @@
 
         // Render DOM
         document.addEventListener("DOMContentLoaded", () => {
-            // Header & Hero Section Text
-            document.getElementById("navName").textContent = profileData.name;
             document.getElementById("heroName").textContent = profileData.name;
             document.getElementById("heroBio").textContent = profileData.bio;
             document.getElementById("cardName").textContent = profileData.name;
