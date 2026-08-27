@@ -648,6 +648,8 @@
 
         // Render DOM
         document.addEventListener("DOMContentLoaded", () => {
+            // Header & Hero Section Text
+            document.getElementById("navName").textContent = profileData.name;
             document.getElementById("heroName").textContent = profileData.name;
             document.getElementById("heroBio").textContent = profileData.bio;
             document.getElementById("cardName").textContent = profileData.name;
